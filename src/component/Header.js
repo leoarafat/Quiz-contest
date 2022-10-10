@@ -25,7 +25,6 @@ const Header = () => {
         <li> <NavLink to='/blog'>Blog</NavLink></li>
       </ul>
     </div>
-    <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal p-0">
@@ -37,9 +36,7 @@ const Header = () => {
       <li> <NavLink to='/blog'>Blog</NavLink></li>
     </ul>
   </div>
-  <div className="navbar-end">
-    <a className="btn">Get started</a>
-  </div>
+
 </div>
     );
 };

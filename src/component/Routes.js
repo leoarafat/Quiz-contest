@@ -8,12 +8,18 @@ import Topics from "./Topics";
 
 export const router = createBrowserRouter([
     {
-        path: '/', errorElement: <ErrorPage/>, element: <Root/>,children:[
+        path: '/',
+        loader: async () =>{
+            return fetch('https://openapi.programming-hero.com/api/quiz')
+        }, errorElement: <ErrorPage/>, element: <Root/>,children:[
             {
-                path: '/', element: <Home/>
+                path: '/',
+
+                 element: <Home/>
             },
             {
-                path: '/home', element: <Home/>
+                path: '/home',
+                 element: <Home/>
             },
             {
                 path: '/statistics', element: <Statistics/>
