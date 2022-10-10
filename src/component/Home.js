@@ -1,10 +1,20 @@
 import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import QuizItem from "./QuizItem";
 import { QuizContext } from "./Root";
 
 const Home = () => {
   const quizData = useContext(QuizContext);
-//   console.log(quizData)
+
+  // const [cart, setCart] = useContext(CartContext)
+  
+  const naviGate = useNavigate()
+
+  const handleAddButton =(props) =>{
+        naviGate(`/topic/${props.id}`)
+        // console.log(props.id)
+        
+  }
 
   return (
     <div>
@@ -77,7 +87,7 @@ const Home = () => {
 
       <div className="sm:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4   gap-5 m-5 ">{
 
-quizData.map((quiz) => <QuizItem quizItem={quiz}/>)
+quizData.map((quiz) => <QuizItem handleAddButton={handleAddButton} key={quiz.id} quizItem={quiz}/>)
 
       }</div>
     </div>
