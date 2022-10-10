@@ -1,16 +1,18 @@
-import React from 'react';
+import React from "react";
 
-import TopicDetail from './TopicDetail';
+// import TopicDetail from './TopicDetail';
 
 const Topics = () => {
-    // const users = useLoaderData()
-    // console.log(users)
-    
-    return (
-        <div>
-            <TopicDetail/>
-        </div>
-    );
+  // const users = useLoaderData()
+// console.log(quizOption)
+
+  return (
+<div>
+    <p>
+    in
+    </p>
+</div>
+  );
 };
 
 export default Topics;

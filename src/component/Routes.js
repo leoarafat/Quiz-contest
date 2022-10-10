@@ -4,7 +4,7 @@ import ErrorPage from "./ErrorPage";
 import Home from "./Home";
 import Root from "./Root";
 import Statistics from "./Statistics";
-import TopicDetail from "./TopicDetail";
+
 import Topics from "./Topics";
 
 export const router = createBrowserRouter([
@@ -25,18 +25,9 @@ export const router = createBrowserRouter([
                 // } ,
                  element: <Home/>
             },
-            {
-                path: '/topic/:id',
-                loader: async({params}) =>{
-                    return fetch (`https://openapi.programming-hero.com/api/quiz/${params.id}`)
-                },
-                element:<TopicDetail/>
-            },
+
             {
                 path: '/topics', 
-                // loader: async ({params}) =>{
-                //     return fetch (`https://openapi.programming-hero.com/api/quiz/${params.topics}`)
-                // },
                 element: <Topics/>
             },
            
