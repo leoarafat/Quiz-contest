@@ -1,20 +1,20 @@
-import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
-import QuizItem from "./QuizItem";
-import { CartContext, QuizContext } from "./Root";
+
+import { useLoaderData, useNavigate } from "react-router-dom";
+import QuizItemCard from "./QuizItemCard";
+
 
 const Home = () => {
-  const quizData = useContext(QuizContext);
 
-  const [cart, setCart] = useContext(CartContext)
-  
-  const naviGate = useNavigate()
+  const quizData = useLoaderData().data
+console.log(quizData)
 
-  const handleAddButton =(props) =>{
-        naviGate(`/topics/${props.id}`)
-        // console.log(props.id)
-        
-  }
+
+  const naviGate = useNavigate();
+
+  const handleAddButton = (props) => {
+    naviGate(`/quiz/${props.id}`);
+    // console.log(props.id)
+  };
 
   return (
     <div>
@@ -85,11 +85,11 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="sm:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4   gap-5 m-5 ">{
-
-quizData.map((quiz) => <QuizItem handleAddButton={handleAddButton} quizItem={quiz}/>)
-
-      }</div>
+      <div className="sm:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4   gap-5 m-5 ">
+        {quizData.map((quiz) => (
+          <QuizItemCard handleAddButton={handleAddButton} quizItem={quiz} />
+        ))}
+      </div>
     </div>
   );
 };

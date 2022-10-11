@@ -1,6 +1,6 @@
 import { ArrowLongRightIcon } from "@heroicons/react/24/solid";
 
-const QuizItem = ({ quizItem , handleAddButton}) => {
+const QuizItemCard = ({ quizItem , handleAddButton}) => {
   // console.log(quizItem)
   const { logo, name, total } = quizItem;
 
@@ -24,4 +24,4 @@ const QuizItem = ({ quizItem , handleAddButton}) => {
   );
 };
 
-export default QuizItem;
+export default QuizItemCard;
