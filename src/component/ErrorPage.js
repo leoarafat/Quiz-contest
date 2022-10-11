@@ -14,7 +14,7 @@ const ErrorPage = () => {
 		</svg>
 		<p className="text-[4rem] text-red-900">{error.status}</p>
         <p className='text-[2.5rem]'>{error.statusText}</p>
-		<Link rel="noopener noreferrer" to="#" className="px-8 py-3 font-semibold rounded dark:bg-violet-400 dark:text-gray-900">Back to homepage</Link>
+		<Link rel="noopener noreferrer" to="/home" className="px-8 py-3 font-semibold rounded dark:bg-violet-400 dark:text-gray-900">Back to homepage</Link>
 	</div>
 </section>
     );

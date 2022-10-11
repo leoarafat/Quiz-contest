@@ -60,11 +60,10 @@ const Home = () => {
                   </svg>
                   <span className="relative">The</span>
                 </span>{' '}
-                quick, brown fox jumps over a lazy dog
+                Welcome to home page
               </h2>
               <p className="text-base text-indigo-100 md:text-lg">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque rem aperiam, eaque ipsa quae.
+              React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes.
               </p>
             </div>
             <div>
@@ -80,6 +79,7 @@ const Home = () => {
       </div>
     </div>
 
+<hr />
 
 
       <div className="md:grid grid-cols-2 lg:grid-cols-3 ">

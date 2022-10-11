@@ -52,7 +52,7 @@ const ShowQuiz = ({ quizAnswer }) => {
             <label
               htmlFor={option}
               className="w-full py-4 cursor-pointer h-full"
-              onClick={(e) => quizHandler(option)}
+              onClick={() => quizHandler(option)}
             >
               {""}
               <p>{option}</p>

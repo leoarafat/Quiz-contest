@@ -9,7 +9,7 @@ const Topics = () => {
   return (
 <div>
     <p>
-    in
+    <h3>This is Topics</h3>
     </p>
 </div>
   );
