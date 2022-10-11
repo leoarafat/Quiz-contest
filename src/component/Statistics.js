@@ -16,8 +16,12 @@ const Statistics = () => {
   // console.log(rechartData)
 
   return (
-    <div className="flex justify-center flex-col mt-[50px]">
-        <p>This is Statics Page</p>
+    <div>
+
+    <p className="text-center mt-[50px] text-xl  font-bold">This is recharts</p>
+  
+    <div className="flex justify-center mt-5">
+     
       <LineChart
         width={500}
         height={300}
@@ -42,6 +46,7 @@ const Statistics = () => {
         />
         <Line type="monotone" dataKey="total" stroke="#82ca9d" />
       </LineChart>
+    </div>
     </div>
   );
 };

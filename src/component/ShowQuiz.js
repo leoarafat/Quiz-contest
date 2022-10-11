@@ -10,8 +10,8 @@ const ShowQuiz = ({ quizAnswer }) => {
 
   const [open, setOpen] = useState(false);
 
-  const quizHandler = (innerText) => {
-    if (innerText === correctAnswer) {
+  const quizHandler = (option) => {
+    if (option === correctAnswer) {
       toast.success("Correct Answer", { autoClose: 500 });
       // alert ('true')
     } else {
@@ -52,7 +52,7 @@ const ShowQuiz = ({ quizAnswer }) => {
             <label
               htmlFor={option}
               className="w-full py-4 cursor-pointer h-full"
-              onClick={(e) => quizHandler(e.target.innerText)}
+              onClick={(e) => quizHandler(option)}
             >
               {""}
               <p>{option}</p>
