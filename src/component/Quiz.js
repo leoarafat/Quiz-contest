@@ -1,20 +1,21 @@
-// import React from "react";
-// import Topics from "./Topics";
+import React from "react";
+import { useLoaderData } from "react-router-dom";
+import ShowQuiz from "./ShowQuiz";
 
-// const Quiz = ({ QuizQuestion }) => {
-//   //   console.log(QuizQuestion)
-//   const { question, options, correctAnswer } = QuizQuestion;
-//   //   console.log(question)
+const Quiz = () => {
+  const loadQuiz = useLoaderData().data;
+  console.log(loadQuiz);
 
-//   return (
-//     <div className="border border-solid rounded-md p-3 m-[50px]">
-//       <h2>{question}</h2>
-//       <div className="flex justify-around flex-col ">
-//         {options.map((option) => <p className="p-2 m-3 bg-lime-100 text-black font-bold rounded-sm w-[300px] mx-auto"><input type="radio" name="option" />{option}</p> )}
+  return (
+    <div className="text-center pt-[5rem]">
+      <h1 className="shadow-lg p-4 w-[300px] mx-auto text-3xl font-bold ">
+        Quiz of <span className="text-orange-700">{loadQuiz.name}</span>
+      </h1>
+      {loadQuiz.questions.map((pro) => (
+        <ShowQuiz key={pro.id} name={pro.name} quizAnswer={pro} />
+      ))}
+    </div>
+  );
+};
 
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Quiz;
+export default Quiz;

@@ -1,27 +1,62 @@
-import React from "react";
-import { EyeIcon } from "@heroicons/react/24/solid";
-const ShowQuiz = ({ que, handleRightButton }) => {
-//   console.log(que);
+import React, { useState } from "react";
+import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/solid";
+const ShowQuiz = ({ quizAnswer }) => {
+  // console.log(que);
 
-  const { question, options,  } = que;
+  const { question, options, correctAnswer } = quizAnswer;
+  console.log(options);
+
+  const [open, setOpen] = useState(false);
+
+  const quizHandler = (innerText) => {
+    if (innerText === correctAnswer) {
+      alert("correct");
+    } else {
+      alert("wrong");
+    }
+  };
 
   return (
-    <div className="sm:w-[100%] m-[50px] lg:w-[600px] mx-auto border border-solid  rounded-md ">
-      <p className="bg-gray-500 text-white p-2 rounded-md m-3 flex justify-between">{question} <EyeIcon className="h-6 w-6"/>
-      </p>
-      <p>
-        {options.map((option) => (
-          <div className=" w-[300px] mx-auto ">
-            <p
-              onClick={() => handleRightButton(option)}
-              className=" bg-gray-600 m-3 p-2 rounded-md"
+    <div className="border-2 mb-12 rounded p-4 shadow-md lg:w-1/2 md:w-4/5  mx-2 md:mx-auto ">
+      <div className=" bg-purple-900 text-white p-2 rounded-md m-3 flex justify-between relative">
+        <div className="text-center w-full">
+          <p className="text-xl font-semibold">{question}</p>
+        </div>
+
+        <div className="h-6 w-6" onClick={() => setOpen(!open)}>
+          {open ? <EyeIcon /> : <EyeSlashIcon />}
+        </div>
+       
+          <p
+            className={`text-black ${
+              open
+                ? "absolute right-8  transition-all bg-slate-200 font-bold py-2 px-2 rounded"
+                : "hidden"
+            }`}
+          >
+            {correctAnswer}
+          </p>
+      
+      </div>
+
+      <div className="sm:grid grid-cols-2 gap-2 mt-7 flex flex-col ">
+        {options.map((option, id) => (
+          <div
+            className=" border-2 pt-2 rounded-lg  flex items-center gap-2"
+            key={id}
+          >
+            <input type="radio" name="quiz" id={option} />
+            <label
+              htmlFor={option}
+              className="w-full py-4 cursor-pointer h-full"
+              onClick={(e) => quizHandler(e.target.innerText)}
             >
-              <input type="radio" name="option" id="" />
-              {option}
-            </p>
+              {""}
+              <p>{option}</p>
+            </label>
           </div>
         ))}
-      </p>
+      </div>
     </div>
   );
 };
