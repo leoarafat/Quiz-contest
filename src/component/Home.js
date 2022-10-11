@@ -58,9 +58,9 @@ const Home = () => {
                       height="24"
                     />
                   </svg>
-                  <span className="relative">The</span>
+                  <span className="relative">Welcome</span>
                 </span>{' '}
-                Welcome to home page
+                 to home page
               </h2>
               <p className="text-base text-indigo-100 md:text-lg">
               React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes.

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import { ArrowRightIcon } from "@heroicons/react/24/solid";
 const HomeData = ({data}) => {
     const {id, logo, name, total} = data
 
@@ -19,7 +19,10 @@ const HomeData = ({data}) => {
     <div className="card-actions justify-end">
     <button className='btn' 
         onClick={handleStartPractice}>
-            <span>Start Practice</span>
+            <span className='flex items-center '>Start Quiz
+      <ArrowRightIcon className='w-6 h-6 text-sky-400'/>
+
+            </span>
 
             </button>
     </div>
