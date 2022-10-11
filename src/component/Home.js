@@ -82,7 +82,7 @@ const Home = () => {
 <hr />
 
 
-      <div className="md:grid grid-cols-2 lg:grid-cols-3 ">
+      <div className="sm:grid  grid-cols-1 lg:grid-cols-2 mx-auto">
   {
     receiveData.map(data => <HomeData key={data.id} data={data}/>)
   }

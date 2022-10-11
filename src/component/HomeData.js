@@ -11,7 +11,7 @@ const HomeData = ({data}) => {
     
   };
     return (
-<div className="card w-96 glass mx-auto my-4 ">
+<div className="card w-[300px] glass mx-auto my-4 ">
   <figure><img src={logo} alt="car!"/></figure>
   <div className="card-body">
     <h2 className="card-title">Total Quiz: {total}</h2>
