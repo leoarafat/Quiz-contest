@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/solid";
+import { toast } from "react-toastify";
+
 const ShowQuiz = ({ quizAnswer }) => {
   // console.log(que);
 
@@ -10,15 +12,17 @@ const ShowQuiz = ({ quizAnswer }) => {
 
   const quizHandler = (innerText) => {
     if (innerText === correctAnswer) {
-      alert("correct");
+      toast.success("Correct Answer", { autoClose: 500 });
+      // alert ('true')
     } else {
-      alert("wrong");
+      toast.warning("Wrong Answer", { autoClose: 500 });
+      // alert('false')
     }
   };
 
   return (
     <div className="border-2 mb-12 rounded p-4 shadow-md lg:w-1/2 md:w-4/5  mx-2 md:mx-auto ">
-      <div className=" bg-purple-900 text-white p-2 rounded-md m-3 flex justify-between relative">
+      <div className=" bg-[#150050] text-white p-2 rounded-md m-3 flex justify-between relative">
         <div className="text-center w-full">
           <p className="text-xl font-semibold">{question}</p>
         </div>
@@ -26,17 +30,16 @@ const ShowQuiz = ({ quizAnswer }) => {
         <div className="h-6 w-6" onClick={() => setOpen(!open)}>
           {open ? <EyeIcon /> : <EyeSlashIcon />}
         </div>
-       
-          <p
-            className={`text-black ${
-              open
-                ? "absolute right-8  transition-all bg-slate-200 font-bold py-2 px-2 rounded"
-                : "hidden"
-            }`}
-          >
-            {correctAnswer}
-          </p>
-      
+
+        <p
+          className={`text-black ${
+            open
+              ? "absolute right-8  transition-all bg-slate-200 font-bold py-2 px-2 rounded"
+              : "hidden"
+          }`}
+        >
+          {correctAnswer}
+        </p>
       </div>
 
       <div className="sm:grid grid-cols-2 gap-2 mt-7 flex flex-col ">

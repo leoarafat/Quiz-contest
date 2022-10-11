@@ -11,22 +11,24 @@ const HomeData = ({data}) => {
     
   };
     return (
-        <div className='bg-blue-500 rounded-md'>
-            <div>
-                <img src={logo} alt="" />
-            </div>
-            <div className='flex pt-3 justify-between items-center'>
-        <h1>{name}</h1>
-        <p>{total}</p>
-        <button 
+<div className="card w-96 glass mx-auto my-4 ">
+  <figure><img src={logo} alt="car!"/></figure>
+  <div className="card-body">
+    <h2 className="card-title">Total Quiz: {total}</h2>
+    <p>{name}</p>
+    <div className="card-actions justify-end">
+    <button className='btn' 
         onClick={handleStartPractice}>
             <span>Start Practice</span>
 
             </button>
-            </div>
-            
-        </div>
+    </div>
+  </div>
+</div>
     );
 };
 
 export default HomeData;
+
+
+

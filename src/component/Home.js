@@ -10,7 +10,7 @@ const Home = () => {
 // console.log(receiveData)
 
   return (
-<div>
+<div className="md:grid grid-cols-2 lg:grid-cols-3 ">
   {
     receiveData.map(data => <HomeData key={data.id} data={data}/>)
   }
